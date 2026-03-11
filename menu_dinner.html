@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОБЕД | ТОТ ЕЩЁ ГУСЬ</title>
+<style>
+/* Основной контейнер */
+.tm-menu-wrapper {
+   font-family: 'Georgia', 'Times New Roman', serif;
+    max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        color: #333;
+        background-color: #fff;
+        line-height: 1.5;
+
+/* Заголовки разделов */
+.tm-section-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 40px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+    text-align: center;
+}
+/* Typography */
+    .wl-main-title {
+        text-align: center;
+        font-size: 36px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+        color: #000;
+        padding-bottom: 20px;
+}		
+.tm-subsection-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0 15px 0;
+    color: #555;
+    text-align: left;
+}
+
+/* Карточка блюда */
+.tm-item {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Верхняя часть: Название и Цена */
+.tm-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.tm-item-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    padding-right: 15px;
+    color: #000;
+}
+
+.tm-item-price {
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #000;
+}
+
+/* Описание блюда */
+.tm-item-desc {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Специальный блок для цен обеда */
+.tm-lunch-price-box {
+    text-align: center;
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 30px 0;
+    background-color: #fafafa;
+}
+
+.tm-lunch-price-main {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.tm-lunch-price-note {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 640px) {
+    .tm-menu-wrapper {
+        padding: 15px;
+    }
+    .tm-section-title {
+        font-size: 20px;
+    }
+    .tm-item-header {
+        flex-direction: row;
+    }
+    .tm-item-name {
+        font-size: 16px;
+        flex: 1 1 auto;
+    }
+    .tm-item-price {
+        font-size: 16px;
+        flex: 0 0 auto;
+    }
+    .tm-item-desc {
+        font-size: 13px;
+    }
+    .tm-lunch-price-main {
+        font-size: 18px;
+    }
+}
+</style>
+<link rel="icon" href="https://totgoose.github.io/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="tm-menu-wrapper">
+<img src="https://totgoose.github.io/img/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+<h1 class="wl-main-title">ОБЕД</h1>
+
+<div class="tm-lunch-price-box">
+    <div class="tm-lunch-price-main">Одно(ONE) блюдо на выбор + бокал вина (150мл.) — 890 ₽</div>
+    <div class="tm-lunch-price-main">Два(TWO)блюда на выбор + бокал вина (150мл.) — 1290 ₽</div>
+	<div class="tm-lunch-price-main">Вино:</div>
+	<div class="tm-lunch-price-main">Белое — Perdeberg Cellar Chenin Blanc South Africa</div>
+    <div class="tm-lunch-price-main">Красное — «Duckitt» Pinotage Shiraz South Africa</div>
+    <div class="tm-lunch-price-note">*по Вашему желанию вино может быть заменено на любой чай, эспрессо, американо, воду без газа или ягодный морс</div>
+</div>
+
+<!-- Section 1: Супы -->
+
+<h2 class="tm-section-title">Супы</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Консоме с фрикадельками</h3>
+    </div>
+    <p class="tm-item-desc">Наваристый бульон с говяжьими фрикадельками и овощами.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Суп из чечевицы</h3>
+    </div>
+    <p class="tm-item-desc">С карри на кокосовых сливках. Подается с лаймом, мятой и кинзой.</p>
+</div>
+
+<!-- Section 2: Холодные блюда -->
+
+<h2 class="tm-section-title">Холодные блюда</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Салат с тыквой и козьим сыром</h3>
+    </div>
+    <p class="tm-item-desc">Запеченная тыква, мягкий козий сыр Шавру, салатный микс и цитрусовая заправка.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Малый зеленый салат</h3>
+    </div>
+    <p class="tm-item-desc">Из разных листьев салата, цуккини, стручковой фасоли, брокколи, огурцов с заправкой в азиатском стиле и семенами тыквы, подсолнуха и кунжута.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Салат Цезарь</h3>
+    </div>
+    <p class="tm-item-desc">Классический, первозданный рецепт салата с листьями Романо, соусом из анчоусов и крошкой из хрустящего бекона. Без курицы (!!!)</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Паштет из говяжьей печени</h3>
+    </div>
+    <p class="tm-item-desc">Подается со сливочным эспуме из белых грибов.</p>
+</div>
+
+<!-- Section 3: Горячие блюда -->
+
+<h2 class="tm-section-title">Горячие блюда</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Куриный шницель</h3>
+    </div>
+    <p class="tm-item-desc">Шницель из бедра цыплят. Подается с медово-горчичным соусом и жареным бейби картофелем с укропом.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Телячьи щечки</h3>
+    </div>
+    <p class="tm-item-desc">Щечки, томленые в солодовом соусе. Подаются с картофельным пюре.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Фетучини с креветками и вонголе</h3>
+    </div>
+    <p class="tm-item-desc">В сливочном соусе и пармезаном.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Печень по-строгановски</h3>
+    </div>
+    <p class="tm-item-desc">Говяжья печень, тушеная в сметано-томатном соусе. Подается с картофельным пюре и битыми огурцами.</p>
+</div>
+
+<!-- Section 4: Десерт -->
+
+<h2 class="tm-section-title">Десерт</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Конфеты ручной работы «Шоколадный трюфель»</h3>
+        <span class="tm-item-price">250 ₽</span>
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>
