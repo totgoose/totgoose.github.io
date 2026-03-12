@@ -1,0 +1,253 @@
+<!-- START WINE LIST HTML FOR TILDA -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ВИННАЯ КАРТА | ТОТ ЕЩЁ ГУСЬ</title>
+<style>
+/* General Container */
+.wl-container {
+font-family: 'Georgia', 'Times New Roman', serif;
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px;
+color: #333;
+background-color: #fff;
+line-height: 1.5;
+}
+/* Typography */
+.wl-main-title {
+text-align: center;
+font-size: 36px;
+text-transform: uppercase;
+letter-spacing: 3px;
+margin-bottom: 40px;
+color: #000;
+border-bottom: 2px solid #8b0000;
+padding-bottom: 20px;
+}
+.wl-section-title {
+font-size: 24px;
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-top: 50px;
+margin-bottom: 50px;
+color: #8b0000; /* Wine Red */
+text-align: center;
+font-weight: 600;
+}
+.wl-subsection-title {
+font-size: 18px;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-top: 30px;
+margin-bottom: 15px;
+color: #555;
+border-left: 4px solid #8b0000;
+padding-left: 10px;
+font-weight: bold;
+}
+/* Grid Layout for Wine Items */
+.wl-grid {
+display: grid;
+grid-template-columns: 1fr auto;
+gap: 10px 20px;
+margin-bottom: 5px;
+padding-bottom: 5px;
+border-bottom: 1px dotted #ddd;
+}
+.wl-grid:last-child {
+border-bottom: none;
+}
+/* Wine Info */
+.wl-info {
+display: flex;
+flex-direction: column;
+}
+.wl-name {
+font-size: 16px;
+font-weight: 600;
+color: #222;
+}
+.wl-details {
+font-size: 13px;
+color: #666;
+font-style: italic;
+margin-top: 2px;
+}
+.wl-volume {
+font-size: 11px;
+background: #f0f0f0;
+padding: 2px 6px;
+border-radius: 4px;
+color: #555;
+margin-left: 8px;
+vertical-align: middle;
+font-weight: normal;
+font-style: normal;
+text-transform: uppercase;
+}
+/* Price */
+.wl-price {
+font-size: 16px;
+font-weight: 700;
+color: #8b0000;
+white-space: nowrap;
+text-align: right;
+min-width: 80px;
+}
+/* Specific Styles for Digestives/Beer to allow multi-column if needed, but keeping simple list for now */
+.wl-simple-list .wl-grid {
+grid-template-columns: 1fr auto;
+}
+/* Responsive */
+@media (max-width: 600px) {
+.wl-main-title { font-size: 28px; }
+.wl-section-title { font-size: 20px; }
+.wl-grid {
+grid-template-columns: 1fr;
+gap: 5px;
+border-bottom: 1px solid #eee;
+padding-bottom: 15px;
+margin-bottom: 15px;
+}
+.wl-price {
+text-align: left;
+margin-top: 5px;
+font-size: 18px;
+}
+.wl-details {
+font-size: 12px;
+}
+ /* Map Container */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.6),
+                0 0 0 1px rgba(255,255,255,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 25px;
+        }
+
+        .map-container:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.7),
+                0 0 0 1px rgba(255,255,255,0.1);
+        }
+
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            filter:
+                brightness(0.7)
+                contrast(1.1)
+                saturate(0.8)
+                hue-rotate(180deg)
+                invert(1);
+            transition: filter 0.5s ease;
+        }
+
+        .map-container:hover .map-wrapper {
+            filter:
+                brightness(0.75)
+                contrast(1.15)
+                saturate(0.85)
+                hue-rotate(180deg)
+                invert(1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            mix-blend-mode: overlay;
+        }
+
+        .map-glow {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg,
+                rgba(99, 102, 241, 0.3) 0%,
+                transparent 30%,
+                transparent 70%,
+                rgba(139, 92, 246, 0.3) 100%
+            );
+            border-radius: 18px;
+            z-index: -1;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .map-container:hover .map-glow {
+            opacity: 1;
+        }
+
+        .map-title {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .map-container:hover .map-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+}
+</style>
+<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+      <img src="http://totgoose.github.io/img/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+	  <div class="wl-container">
+      
+          <h1 class="wl-main-title"><a href="http://totgoose.github.io/menu.html" target="_blank" style="color:inherit;text-decoration:none;">МЕНЮ  |  
+          <a href="http://totgoose.github.io/menu_dinner.html" target="_blank" style="color:inherit;text-decoration:none;">БИЗНЕС-ЛАНЧ  | 
+          <a href="http://totgoose.github.io/wine.html" target="_blank" style="color:inherit;text-decoration:none;">ВИННАЯ КАРТА </h1>
+       </div>
+<!-- Map -->
+            <div class="map-container">
+                <div class="map-glow"></div>
+                <div class="map-wrapper">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Af6acc35f39f04314ae5135916ccc71a32f937ef470795668349455d8c92847f9&amp;source=constructor"
+                        width="100%" height="250" frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+    
+<div class="wl-section-title"><a href="https://yandex.ru/maps/org/tot_yeshchyo_gus/240625638253/" target="_blank" style="color:inherit;text-decoration:none;">ВАЛОВАЯ 26 | 
+<a href="tel:+79999262688" target="_blank" style="color:inherit;text-decoration:none;">+ 7 (9999) 26-26-88 |
+<a href="https://totgoose.ru" target="_blank" style="color:inherit;text-decoration:none;">TOTGOOSE.RU</div>
+
+
+</body>
+</html>
+
