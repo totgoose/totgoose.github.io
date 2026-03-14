@@ -21,7 +21,7 @@ jobs:
         id: generate          # чтобы получить outputs
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://totgoose.github.io/totgoose.github.io # ← обязательно измени!
+          base-url-path: https://тот-ещё-гусь.рф # ← обязательно измени!
           # Примеры:
           #   https://ivanivanov.github.io/my-site/
           #   https://ivanivanov.github.io/ (если репозиторий называется ivanivanov.github.io)
