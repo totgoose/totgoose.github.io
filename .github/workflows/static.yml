@@ -1,0 +1,67 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+            - name: generate-sitemap
+  # You may pin to the exact commit or the version.
+  # uses: cicirello/generate-sitemap@6a56a20238e631d653600cf792c3596722b78259
+  uses: cicirello/generate-sitemap@v1.10.4
+  with:
+    # The path to the root of the website
+    path-to-root: # optional, default is .
+    # The url of your webpage
+    base-url-path: # optional, default is https://web.address.of.your.nifty.website/
+    # Indicates whether to include html files in the sitemap.
+    include-html: # optional, default is true
+    # Indicates whether to include pdf files in the sitemap.
+    include-pdf: # optional, default is true
+    # Indicates if sitemap should be formatted in xml.
+    sitemap-format: # optional, default is xml
+    # Space separated list of additional file extensions to include in sitemap.
+    additional-extensions: # optional, default is 
+    # Enables dropping .html from urls in sitemap.
+    drop-html-extension: # optional
+    # Pass true to include only the date without the time in XML sitemaps; and false to include full date and time.
+    date-only: # optional
+    # Space separated list of paths to exclude from the sitemap.
+    exclude-paths: # optional, default is 
+          
