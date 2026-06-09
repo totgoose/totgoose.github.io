@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="http://Тот-Ещё-Гусь.РФ/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ОБЕД | ТОТ ЕЩЁ ГУСЬ</title>
+<style>
+ body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logo-image {
+            width: 177px;
+            height: 230px;
+            margin-right: 10px;
+        }
+
+        .header-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-nav a {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 30px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: #d9534f;
+        }
+
+        .header-contacts {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .phone-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .phone-link i {
+            color: #d9534f;
+        }
+
+        .address-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .address-link:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 8px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #d9534f;
+        }
+
+        @media (max-width: 960px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .header-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .wl-container {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #fff;
+            line-height: 1.5;
+            box-sizing: border-box;
+        }
+
+        .wl-main-title {
+            text-align: center;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            color: #000;
+            padding-bottom: 20px;
+        }
+         .hr-shelf {
+            margin: -30px auto 40px;
+            height: 50px;
+            border: none;
+            border-bottom: 1px solid #8b0000;
+            box-shadow: 0 20px 20px -20px #8b0000;
+            width: 70%;    
+            margin-bottom: 40px;
+        }
+        .wl-section-title {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-transform: uppercase;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #8b0000;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 20px;
+        }
+
+        .wl-section-footer {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #8b0000;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .wl-subsection-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #555;
+            border-left: 4px solid #8b0000;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+
+        .wl-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px 20px;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #ddd;
+        }
+
+        .wl-grid:last-child {
+            border-bottom: none;
+        }
+
+        .wl-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wl-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .wl-details {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .wl-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #8b0000;
+            white-space: nowrap;
+            text-align: right;
+            min-width: 80px;
+        }
+
+        @media (max-width: 600px) {
+            .wl-container {
+                padding: 15px;
+            }
+            
+            .wl-main-title { 
+                font-size: 24px; 
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .wl-main-title .separator {
+                display: none;
+            }
+            
+            .wl-section-title { 
+                font-size: 18px; 
+                margin-top: 30px;
+                margin-bottom: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .wl-section-title .separator {
+                display: none;
+            }
+            
+            .wl-grid {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .wl-price {
+                text-align: left;
+                margin-top: 5px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .wl-main-title {
+                font-size: 20px;
+            }
+        }
+
+/* Основной контейнер */
+.tm-menu-wrapper {
+   font-family: 'Georgia', 'Times New Roman', serif;
+    max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        color: #333;
+        background-color: #fff;
+        line-height: 1.5;
+
+/* Заголовки разделов */
+.tm-section-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+	color: #8b0000;
+    letter-spacing: 1px;
+    margin: 40px 0 20px 0;
+    padding-bottom: 20px;
+   /*  border-bottom: 2px solid #8b0000;*/
+    text-align: center;
+}
+/* Typography */
+    .wl-main-title {
+        text-align: center;
+        font-size: 36px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+        color: #000;
+        padding-bottom: 20px;
+}		
+.tm-subsection-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0 15px 0;
+    color: #555;
+    text-align: left;
+}
+
+/* Карточка блюда */
+.tm-item {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Верхняя часть: Название и Цена */
+.tm-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.tm-item-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    padding-right: 15px;
+    color: #000;
+}
+
+.tm-item-price {
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #000;
+}
+
+/* Описание блюда */
+.tm-item-desc {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Специальный блок для цен обеда */
+.tm-lunch-price-box {
+    text-align: center;
+    border: 2px solid #8b0000;
+    padding: 20px;
+    margin: 30px 0;
+    background-color: #fafafa;
+}
+
+.tm-lunch-price-main {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.tm-lunch-price-note {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 640px) {
+    .tm-menu-wrapper {
+        padding: 15px;
+    }
+    .tm-section-title {
+        font-size: 20px;
+    }
+    .tm-item-header {
+        flex-direction: row;
+    }
+    .tm-item-name {
+        font-size: 16px;
+        flex: 1 1 auto;
+    }
+    .tm-item-price {
+        font-size: 16px;
+        flex: 0 0 auto;
+    }
+    .tm-item-desc {
+        font-size: 13px;
+    }
+    .tm-lunch-price-main {
+        font-size: 18px;
+    }
+	
+}
+</style>
+<link rel="icon" href="https://www.Тот-Ещё-Гусь.РФ/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+	
+<div class="tm-menu-wrapper">
+
+<h1 class="wl-main-title">ОБЕД</h1>
+<hr class="hr-shelf">
+<img src="https://www.Тот-Ещё-Гусь.РФ/img/goose.png" alt="Гусь" style="display: block; margin: 0 auto 20px auto; max-width: 200px;">
+<div class="tm-lunch-price-box">
+    <div class="tm-lunch-price-main">Одно(ONE) блюдо на выбор + бокал вина (150мл.) — 890 ₽</div>
+    <div class="tm-lunch-price-main">Два(TWO)блюда на выбор + бокал вина (150мл.) — 1290 ₽</div>
+	<div class="tm-lunch-price-main">Вино:</div>
+	<div class="tm-lunch-price-main">Белое — Perdeberg Cellar Chenin Blanc South Africa</div>
+    <div class="tm-lunch-price-main">Красное — «Vranac» Respublika Srbija</div>
+	<div class="tm-lunch-price-note">*Вино может меняться в зависимости от дня</div>
+    <div class="tm-lunch-price-note">*по Вашему желанию вино может быть заменено на любой чай, эспрессо, американо, воду без газа или ягодный морс</div>
+</div>
+
+<!-- Section 1: Супы -->
+
+<h2 class="tm-section-title">Супы</h2>
+<hr class="hr-shelf">
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Батвинник</h3>
+    </div>
+    <p class="tm-item-desc">Летний суп из щавеля и свекольных листьев на говяжьем бульоне. Подается с куриным яйцом.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Свекольник</h3>
+    </div>
+    <p class="tm-item-desc">Холодный суп из свеклы с копченой Сметаной, редисом, зеленью и креветками.</p>
+</div>
+
+<!-- Section 2: Холодные блюда -->
+
+<h2 class="tm-section-title">Холодные блюда</h2>
+<hr class="hr-shelf">
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Салат из вкусных помидоров</h3>
+    </div>
+    <p class="tm-item-desc">Узбекские помидоры, красный лук, кинза, оливковое масло с бальзамиком.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Малый зеленый салат</h3>
+    </div>
+    <p class="tm-item-desc">Из разных листьев салата, цуккини, стручковой фасоли, брокколи, огурцов с заправкой в азиатском стиле и семенами тыквы, подсолнуха и кунжута.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Салат Цезарь</h3>
+    </div>
+    <p class="tm-item-desc">Классический, первозданный рецепт салата с листьями Романо, соусом из анчоусов и крошкой из хрустящего бекона. Без курицы (!!!)</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Паштет из говяжьей печени</h3>
+    </div>
+    <p class="tm-item-desc">Подается со сливочным эспуме из белых грибов.</p>
+</div>
+
+<!-- Section 3: Горячие блюда -->
+
+<h2 class="tm-section-title">Горячие блюда</h2>
+<hr class="hr-shelf">
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Индейка легкий карри</h3>
+    </div>
+    <p class="tm-item-desc">Филе бедра индейки, обжаренное со сладким перцем и восточными специями. Подается С картофельным пюре и кинзой.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Пенне с лососем</h3>
+    </div>
+    <p class="tm-item-desc">Паста со сливочным кремом из брокколи и лососем.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Халумис гриль</h3>
+    </div>
+    <p class="tm-item-desc">Пресный рассольный творожный сыр, жареный на гриле с томатами. Подается с рукколой и свежей клубникой.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Печень по-строгановски</h3>
+    </div>
+    <p class="tm-item-desc">Говяжья печень, тушеная в сметано-томатном соусе. Подается с картофельным пюре и битыми огурцами.</p>
+</div>
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Голубцы с говядиной (2шт)</h3>
+    </div>
+    <p class="tm-item-desc">Классические голубцы с говяжьим фаршем в пекинской капусте. Подаются со сметаной.</p>
+</div>
+<!-- Section 4: Десерт -->
+
+<h2 class="tm-section-title">Десерт</h2>
+<hr class="hr-shelf">
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Конфеты ручной работы «Шоколадный трюфель»</h3>
+        <span class="tm-item-price">250 ₽</span>
+    </div>
+</div>
+  
+
+</div>
+</body>
+
+</html>
